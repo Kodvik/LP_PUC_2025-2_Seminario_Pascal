@@ -1,0 +1,707 @@
+\documentclass[12pt,a4paper,oneside]{abntex2}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[alf,abnt-etal-cite=3,abnt-etal-list=0]{abntex2cite}  % Para citações e referências ABNT, lembra de não tirar
+\usepackage{geometry}  % Adicionado para margens consistentes, já que estava bugando
+\geometry{margin=2.5cm}  % Margens ajustadas, seguindo o padrão da abnt
+
+\ABNTEXfontereduzida{\footnotesize}  % Tamanho para notas de rodapé, legendas, etc...
+\ABNTEXfontelista{\small}  % Tamanho para listas...
+\bibliographystyle{abnt} %adicionado após apresentarmos para testar formatação de referencia
+
+\titulo{Relatório de Pesquisa LP Pascal\\Trabalho Teórico Prático\\Disciplina: Linguagens de Programação}
+\autor{Edgard de Paiva Melo Filho\\Maicon Gomes Messias}
+\local{Belo Horizonte}
+\data{Set, 2025}
+\instituicao{%
+  \includegraphics[]{LOGO_PUC.png}
+  \\
+  Pontifícia Universidade Católica de Minas Gerais
+  \par
+  Instituto de Ciências Exatas e Informática
+  \par
+  Curso de Engenharia de Computação
+  \par
+  Professor Orientador: Marco Rodrigo Costa 
+}
+\tipotrabalho{Trabalho Acadêmico}
+
+\preambulo{Trabalho apresentado à disciplina de Linguagens de Programação do Curso de Engenharia de Computação da Pontifícia Universidade Católica de Minas Gerais, como requisito parcial para avaliação.}
+
+% Configurações de sumário (ABNT NBR 6027)
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\large}
+\renewcommand{\ABNTEXsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+
+\begin{document}
+
+% Elementos pré-textuais
+\imprimircapa  % Capa conforme ABNT
+
+\imprimirfolhaderosto  % Adicionada para conformidade, já que está no padrão da ABNT (mas ficou melhor que a capa mesmo na minha opnião Maicon, acho que a gente mantem)
+
+% Sumário
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\newpage  % Força quebra limpa após sumário
+
+% Elementos textuais
+\textual
+\chapter{Introdução}
+A linguagem de programação Pascal surgiu em 1970, criada por Niklaus Wirth na Universidade Federal de Zurique, com o objetivo de oferecer uma linguagem estruturada, clara e eficiente para o ensino da programação e da ciência da computação. Diferentemente de muitas linguagens de sua época, como Fortran e Algol, Pascal foi projetada não apenas para resolver problemas práticos, mas, sobretudo, para servir como uma ferramenta pedagógica capaz de transmitir os fundamentos da programação estruturada, promovendo a lógica, a organização e a disciplina no desenvolvimento de algoritmos.
+
+Com uma sintaxe simples e legível, Pascal rapidamente se destacou como uma linguagem didática por excelência. Sua tipagem forte evitava erros comuns de programação, enquanto os recursos de modularização permitiam a construção de programas bem estruturados e de fácil manutenção. Esse conjunto de características fez com que Pascal fosse amplamente adotada em universidades, escolas técnicas e cursos de introdução à programação durante as décadas de 1970, 1980 e início de 1990, consolidando sua relevância no meio acadêmico.
+
+Além de seu papel educacional, Pascal também foi utilizada em aplicações práticas. Compiladores eficientes e ambientes de desenvolvimento como o Turbo Pascal, lançado pela Borland em 1983, possibilitaram o uso da linguagem em projetos reais, incluindo softwares comerciais e sistemas de pequeno a médio porte. Esse avanço contribuiu para que Pascal deixasse de ser apenas uma linguagem acadêmica e alcançasse um espaço no mercado tecnológico da época.
+
+Outro aspecto relevante é a sua influência histórica. Pascal serviu como base para a criação de outras linguagens, entre as quais se destacam Modula-2, Oberon e, principalmente, Delphi, que manteve a simplicidade e a clareza da linguagem original, mas incorporou recursos de orientação a objetos e interfaces gráficas, ampliando seu alcance para aplicações modernas.
+
+Mesmo não sendo mais amplamente utilizada no cenário atual, dominado por linguagens como Python, Java e C++, o legado de Pascal permanece evidente. Seu impacto no ensino da programação estruturada formou gerações de profissionais, além de ter introduzido conceitos que se tornaram fundamentais para a evolução da ciência da computação.
+
+Dessa forma, este relatório busca apresentar uma análise abrangente da linguagem de programação Pascal, abordando sua origem, características principais, aplicações educacionais e práticas, bem como sua influência histórica no desenvolvimento de novas tecnologias e metodologias de ensino.
+
+\chapter{Histórico sobre a Linguagem}
+O objetivo inicial de Wirth era criar uma linguagem de programação que fosse clara, simples e adequada ao ensino da \textbf{programação estruturada}. Diferentemente de outras linguagens de sua época, como Fortran e Algol, Pascal foi projetada com foco pedagógico, permitindo que estudantes aprendessem conceitos fundamentais, como estruturas de controle, modularização e tipagem forte.
+
+Durante as décadas de 1970 e 1980, Pascal consolidou-se como uma das linguagens mais importantes em ambientes acadêmicos, sendo amplamente utilizada em universidades e escolas técnicas. Além do aspecto didático, a criação de ambientes de desenvolvimento como o \textbf{Turbo Pascal}, lançado pela Borland em 1983, possibilitou a aplicação prática da linguagem em softwares comerciais e sistemas de pequeno e médio porte.
+
+Com o passar do tempo, Pascal perdeu espaço no mercado frente a linguagens como C e C++, mas continuou a desempenhar papel central na formação de gerações de programadores. Sua influência histórica é evidente no surgimento de outras linguagens, como Modula-2, Oberon e Delphi, que incorporaram e expandiram seus conceitos.
+
+\section{Cronologia da Linguagem Pascal}
+A seguir, apresenta-se a linha do tempo com os principais marcos da evolução da linguagem Pascal:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=stealth, scale=0.83, transform shape]
+        \draw[thick, gray, dashed] (0,0) -- (18,0);
+        \foreach \x/\ano/\evento in {
+            0/1957/Fortran,
+            2.5/1960/Algol 60,
+            5/1966/ALGOL W,
+            7.5/1970/Pascal,
+            10/1974/Compilador Pascal-P,
+            12/1980/Popularização acadêmica,
+            14/1983/Turbo Pascal,
+            16/1990/Declínio frente a C/C++,
+            18/1995/Delphi/Object Pascal
+        }{
+            \node[circle, fill=blue!60, inner sep=2pt] at (\x,0) {};
+            \node[align=center, font=\scriptsize, text width=1.5cm] at (\x,0.7) {\ano \\ \evento};
+        }
+    \end{tikzpicture}
+    \caption{Linha do tempo da evolução da linguagem Pascal}
+    \label{fig:cronologia-pascal}
+\end{figure}
+
+\section{Genealogia da Linguagem Pascal}
+A genealogia de Pascal mostra suas influências diretas e as linguagens que dela derivaram. Pascal recebeu forte influência do Algol 60 e de sua extensão ALGOL W, além de incorporar princípios do Fortran. Por sua vez, originou linguagens importantes, como Modula-2, Oberon, Delphi/Object Pascal e influenciou Ada.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        ->, >=stealth, node distance=4cm,
+        every node/.style={draw, rectangle, rounded corners, align=center, fill=blue!8, font=\small, minimum width=3cm, minimum height=1cm}
+    ]
+        \node (fortran) {Fortran (1957)};
+        \node (algol60) [right of=fortran] {Algol 60 (1960)};
+        \node (algolw) [right of=algol60] {ALGOL W (1966)};
+        \node (pascal) [below of=algol60, yshift=-2cm] {Pascal (1970)};
+        \node (modula2) [right of=pascal, xshift=2cm] {Modula-2 (1978)};
+        \node (oberon) [below of=modula2, yshift=-2cm] {Oberon (1986)};
+        \node (ada) [left of=pascal, xshift=-2cm] {Ada (1983)};
+        \node (delphi) [below of=pascal, yshift=-2cm] {Delphi/Object Pascal (1995)};
+        \draw (fortran) -- (algol60);
+        \draw (algol60) -- (algolw);
+        \draw (algolw) -- (pascal);
+        \draw (algol60) -- (pascal);
+        \draw (pascal) -- (modula2);
+        \draw (modula2) -- (oberon);
+        \draw (pascal) -- (ada);
+        \draw (pascal) -- (delphi);
+    \end{tikzpicture}
+    \caption{Genealogia da linguagem Pascal e suas influências}
+    \label{fig:genealogia-pascal}
+\end{figure}
+
+\chapter{Paradigmas a que Pertence}
+O Pascal é um marco na história da computação, conhecido por ser uma linguagem de programação didática e com um design bem pensado. Seus principais paradigmas são o \textbf{paradigma imperativo}, o \textbf{paradigma procedural} e o \textbf{paradigma estruturado}.
+
+\section{Paradigma Imperativo}
+O programa é descrito como uma sequência de comandos que alteram o estado do computador, tendo instruções claras de 'o que fazer' e 'como fazer'.
+
+\section{Paradigma Procedural}
+No paradigma procedural, o código é organizado em \textbf{procedimentos} e \textbf{funções}. Em vez de focar em objetos ou em lógica declarativa, o programador define uma série de passos ou instruções que devem ser executadas em uma ordem específica para atingir um resultado. O Pascal se encaixa perfeitamente nesse modelo:
+
+\begin{itemize}
+    \item \textbf{Sub-rotinas:} O código é dividido em pequenos blocos, como \texttt{PROCEDURE} (para ações sem retorno de valor) e \texttt{FUNCTION} (para operações que retornam um valor). Isso ajuda a organizar o código e a evitar a repetição de tarefas.
+    \item \textbf{Sequência de execução:} O programa é uma sequência de chamadas a essas sub-rotinas, seguindo um fluxo de controle linear e bem definido.
+    \item \textbf{Variáveis globais:} O compartilhamento de dados entre diferentes partes do programa é frequentemente feito através de variáveis acessíveis por todo o código, embora isso possa gerar complexidade em projetos maiores.
+\end{itemize}
+\textbf{Exemplo em Pascal:}
+\begin{verbatim}
+procedure ExibirMensagem;
+begin
+  writeln('Olá, mundo!');
+end;
+
+begin
+  ExibirMensagem;
+end.
+\end{verbatim}
+
+\section{Paradigma Estruturado}
+O paradigma estruturado, fortemente ligado ao procedural, busca criar programas mais lógicos, fáceis de ler e de dar manutenção. Ele surgiu como uma alternativa ao uso excessivo do \texttt{GOTO}, que criava um "código de espaguete" confuso. O Pascal foi explicitamente projetado para forçar o uso de estruturas de controle de fluxo mais claras e organizadas.
+
+\begin{itemize}
+    \item \textbf{Estruturas de controle:} O Pascal oferece comandos como \texttt{IF...THEN...ELSE} (para decisões), \texttt{FOR} (para laços com contagem definida), \texttt{WHILE} e \texttt{REPEAT...UNTIL} (para laços com condição), que organizam o fluxo de execução do programa de forma previsível.
+    \item \textbf{Blocos de código:} O uso das palavras-chave \texttt{BEGIN} e \texttt{END} para agrupar comandos permite que o programador defina claramente o escopo de cada estrutura de controle.
+    \item \textbf{Modularidade:} A divisão do código em procedimentos e funções promove a \textbf{modularidade}, ou seja, a capacidade de dividir o programa em módulos ou partes independentes. Isso facilita a depuração e o reuso de código.
+\end{itemize}
+\textbf{Exemplo em Pascal:}
+\begin{verbatim}
+var
+  i: integer;
+begin
+  for i := 1 to 5 do
+    writeln('Número: ', i);
+end.
+\end{verbatim}
+
+Em resumo, Pascal é uma linguagem que exemplifica a programação \textbf{procedural} e \textbf{estruturada}, com ênfase na organização lógica do código através de sub-rotinas e estruturas de controle de fluxo bem definidas. Essa filosofia de design foi fundamental para ensinar boas práticas de programação e influenciou muitas linguagens modernas.
+
+\chapter{Características Marcantes da Linguagem Pascal}
+A linguagem Pascal possui diversas características que a tornam uma linguagem robusta, segura e didática. A seguir, detalhamos suas principais características:
+
+\section{Fortemente Tipada}
+Pascal exige que todas as variáveis tenham um tipo definido antes de serem usadas. Isso evita operações entre tipos incompatíveis, como somar inteiros com strings, garantindo maior segurança e confiabilidade do programa.
+
+\subsection{Tipos de Dados em Pascal}
+A linguagem Pascal dispõe dos tipos de dados apresentados na Tabela~\ref{tab:tipos-pascal}.
+
+\begin{table}[H]
+    \centering
+    \caption{Tipos de dados do Pascal}
+    \label{tab:tipos-pascal}
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Denominação} & \textbf{Conjunto de valores} \\ \hline
+        Char & Caracteres codificados no código ASCII (letras, dígitos e caracteres especiais como \texttt{:}, \texttt{?}, \texttt{*}, etc.) \\ \hline
+        Shortint & Números inteiros do intervalo [$-128$, $127$] \\ \hline
+        Integer & Números inteiros do intervalo [$-32768$, $32767$] \\ \hline
+        Longint & Números inteiros do intervalo [$-2\,147\,483\,648$, $2\,147\,483\,647$] \\ \hline
+        Byte & Números inteiros do intervalo [$0$, $255$] \\ \hline
+        Word & Números inteiros do intervalo [$0$, $65535$] \\ \hline
+        Real & Números reais do conjunto [$-3.4 \times 10^{38}$, $-3.4 \times 10^{-38}$] $\cup$ [$3.4 \times 10^{-38}$, $3.4 \times 10^{38}$] \\ \hline
+        Boolean & Conjunto dos valores \texttt{false} (falso) e \texttt{true} (verdadeiro) \\ \hline
+    \end{tabular}
+\end{table}
+
+À exceção do tipo \texttt{real}, os tipos de dados acima são ordenados no sentido de que existe um primeiro elemento e existem as ideias de sucessor e de antecessor. A ordenação dos tipos de dados que são subconjuntos dos inteiros é a ordenação natural da matemática; a do tipo de dado \texttt{char} é dada pelo Código ASCII e a do tipo de dado \texttt{boolean} é dada por \{\texttt{false}, \texttt{true}\}. Uma observação importante é que o tipo \texttt{real}, rigorosamente falando, não armazena números reais e sim números de um \textit{sistema de ponto flutuante}, que não contém todos os reais, mas apenas os representáveis. O estudo de sistemas de ponto flutuante foge ao escopo deste trabalho e é feito em disciplinas como \textit{Organização e Arquitetura de Computadores} e \textit{Cálculo Numérico}.
+
+\section{Palavras Reservadas da Linguagem Pascal}
+Assim como toda linguagem de programação, Pascal possui identificadores específicos para sua sintaxe, conhecidos como palavras reservadas e, portanto, não podem ser utilizados como nomes de variáveis, funções ou outros elementos do programa. A seguir, apresenta-se a listagem das palavras reservadas:
+
+\begin{table}[H]
+    \centering
+    \caption{Palavras reservadas da linguagem Pascal}
+    \label{tab:palavras-reservadas}
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        and & downto & in & repeat & then & xor \\
+        asm & else & inline & packed & to & case \\
+        array & begin & exports & label & program & until \\
+        const & constructor & for & mod & new & type \\
+        div & do & implementation & of & string & var \\
+        end & file & nil & record & unit & with \\
+        if & object & set & while & & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Se faz ainda importante assim como em todas linguagens de programação, a consideração da sintaxe utilizada para comentarios no Pascal, que utiliza de chaves '\{ \}' para preparar comentarios no código, exemplos de utilização podem ser vistos nos exemplos apresentados no capitulo 6.
+
+\section{Operadores e Expressões em Pascal}
+Os compiladores da linguagem Pascal oferecem suporte a \textbf{expressões aritméticas} e \textbf{relacionais}, permitindo a realização de cálculos e comparações entre valores.
+
+\subsection{Operadores Aritméticos}
+As operações aritméticas envolvem soma, subtração, multiplicação e divisão, além da troca de sinal (operador unário). Operadores como \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/} podem atuar sobre operandos dos tipos \texttt{integer} ou \texttt{real}, enquanto \texttt{div} e \texttt{mod} são específicos para inteiros, representando respectivamente o quociente e o resto da divisão inteira.
+
+\begin{table}[H]
+    \centering
+    \caption{Operadores aritméticos em Pascal}
+    \label{tab:aritmeticos}
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Operador} & \textbf{Operação} \\ \hline
+        + & Adição \\ \hline
+        - & Subtração \\ \hline
+        * & Multiplicação \\ \hline
+        / & Divisão (resulta em \texttt{real}) \\ \hline
+        div & Divisão inteira (quociente) \\ \hline
+        mod & Resto da divisão inteira \\ \hline
+    \end{tabular}
+\end{table}
+
+A avaliação das expressões segue uma hierarquia de precedência semelhante à da matemática, onde multiplicação, divisão, \texttt{div} e \texttt{mod} possuem maior prioridade que soma e subtração. Parênteses podem alterar essa ordem.
+
+\subsection{Operadores Relacionais}
+As expressões relacionais permitem comparações entre valores numéricos e também entre caracteres (de acordo com a ordem ASCII). O resultado de uma relação é sempre um valor do tipo \texttt{boolean}, podendo ser \texttt{true} (verdadeiro) ou \texttt{false} (falso).
+
+\begin{table}[H]
+    \centering
+    \caption{Operadores relacionais em Pascal}
+    \label{tab:relacionais}
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Operador} & \textbf{Operação} \\ \hline
+        > & Maior do que \\ \hline
+        >= & Maior ou igual a \\ \hline
+        < & Menor do que \\ \hline
+        <= & Menor ou igual a \\ \hline
+        = & Igual \\ \hline
+        <> & Diferente \\ \hline
+    \end{tabular}
+\end{table}
+
+Assim como na matemática, a prioridade dos operadores relacionais é inferior à dos operadores aritméticos. Dessa forma, em expressões mistas, primeiro ocorre a avaliação dos cálculos, e em seguida, a verificação da relação.
+
+\section{Estruturada}
+A linguagem segue o paradigma estruturado, utilizando blocos de código delimitados por \texttt{begin} e \texttt{end}. Isso favorece um fluxo lógico claro e reduz o uso do comando \texttt{goto}, facilitando a leitura e manutenção do código, conforme demonstrado nos exemplos expostos anteriormente e na seção de exemplos (Seção 6).
+
+\section{Paradigma Procedural}
+Pascal é uma linguagem procedural, ou seja, os programas são compostos por procedimentos e funções que executam tarefas específicas. A modularização do código permite a reutilização de funções e simplifica a depuração.
+
+\subsection{Modularidade devido ao paradigma}
+Pascal suporta unidades (\texttt{units}), que permitem separar o programa em módulos distintos. Cada módulo pode conter suas funções e procedimentos, facilitando o desenvolvimento e a manutenção de programas grandes.
+
+\section{Legibilidade e Sintaxe Clara}
+A sintaxe de Pascal é próxima da linguagem natural, com comandos como \texttt{if}, \texttt{for}, \texttt{while}, \texttt{repeat} e \texttt{case}. Essa característica torna a linguagem ideal para o ensino de programação e para iniciantes, pois facilita a compreensão da lógica do programa.
+
+\section{Segurança e Controle de Erros}
+A tipagem forte e a estrutura organizada da linguagem previnem erros comuns, garantindo que operações inválidas sejam detectadas em tempo de compilação e promovendo programação segura.
+
+\section{Suporte a Estruturas de Dados}
+Pascal permite a manipulação de arrays, registros (\texttt{records}), conjuntos (\texttt{sets}) e arquivos, oferecendo flexibilidade para implementação de algoritmos e organização eficiente dos dados.
+
+\section{Facilidade de Aprendizado e Ensino}
+Devido à clareza da sintaxe, tipagem rigorosa e fluxo lógico bem definido, Pascal é uma excelente linguagem didática, utilizada amplamente para ensinar algoritmos, lógica de programação e boas práticas de desenvolvimento.
+
+\section{Portabilidade}
+Apesar de ser uma linguagem antiga, Pascal possui compiladores para diversas plataformas. Programas bem estruturados podem ser facilmente adaptados ou migrados para outras linguagens estruturadas modernas.
+
+\section{Resumo Visual das Características}
+\begin{table}[H]
+    \centering
+    \caption{Características marcantes da linguagem Pascal}
+    \label{tab:caracteristicas-resumo}
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Característica} & \textbf{Descrição} \\ \hline
+        Fortemente Tipada & Garante que todas as variáveis tenham tipos definidos, prevenindo erros de operação entre tipos incompatíveis. \\ \hline
+        Estruturada & Utiliza blocos de código (\texttt{begin} ... \texttt{end}) e fluxo lógico claro, evitando uso excessivo de \texttt{goto}. \\ \hline
+        Paradigma Procedural & Organização do código em procedimentos e funções, permitindo modularização e reutilização de código. \\ \hline
+        Modularidade & Suporte a unidades (\texttt{units}) que separam o programa em módulos, facilitando manutenção. \\ \hline
+        Legibilidade & Sintaxe clara, próxima da linguagem natural, ideal para ensino e iniciantes. \\ \hline
+        Segurança & Reduz erros comuns por tipagem forte e estrutura organizada do código. \\ \hline
+        Suporte a Estruturas de Dados & Arrays, registros, conjuntos e arquivos, permitindo organização eficiente de dados. \\ \hline
+        Facilidade de Aprendizado & Linguagem didática, adequada para ensinar algoritmos e lógica de programação. \\ \hline
+        Portabilidade & Código estruturado pode ser adaptado para outras linguagens e plataformas. \\ \hline
+    \end{tabular}
+\end{table}
+
+\chapter{Linguagens Relacionadas}
+A linguagem Pascal foi diretamente influenciada por linguagens anteriores e serviu como base para o desenvolvimento de outras linguagens modernas, desempenhando um papel central na evolução da programação estruturada.
+
+\section{Linguagens que Influenciaram Pascal}
+\begin{itemize}
+    \item \textbf{Algol 60 (1960):} Pascal herdou a sintaxe clara e o conceito de programação estruturada de Algol 60, uma das primeiras linguagens a introduzir blocos de código e estruturas de controle modernas.
+    \item \textbf{ALGOL W (1966):} Desenvolvida por Niklaus Wirth, ALGOL W foi um precursor direto do Pascal, com melhorias em tipos de dados e modularidade que foram refinadas no Pascal.
+    \item \textbf{Fortran (1957):} Embora menos estruturado, Fortran influenciou Pascal em aspectos como manipulação de arrays e operações aritméticas.
+\end{itemize}
+
+\section{Linguagens Influenciadas por Pascal}
+\begin{itemize}
+    \item \textbf{Modula-2 (1978):} Criada por Wirth como uma evolução do Pascal, Modula-2 introduziu módulos mais robustos e suporte a programação concorrente.
+    \item \textbf{Oberon (1986):} Outra criação de Wirth, Oberon simplificou o Pascal, mantendo sua clareza e adicionando recursos para sistemas operacionais.
+    \item \textbf{Delphi/Object Pascal (1995):} Desenvolvida pela Borland, Delphi estendeu o Pascal com orientação a objetos e interfaces gráficas, tornando-se popular para desenvolvimento de aplicações Windows.
+    \item \textbf{Ada (1983):} Embora não seja uma derivação direta, Ada foi fortemente influenciada pelos conceitos de tipagem forte e modularidade do Pascal.
+\end{itemize}
+
+\section{Linguagens Similares}
+Linguagens como \textbf{C} e \textbf{C++} compartilham semelhanças com Pascal no uso de programação estruturada e procedural, mas diferem na flexibilidade (C é menos rígido na tipagem) e na complexidade (C++ adiciona orientação a objetos).
+
+\chapter{Exemplo(s) de Programa(s)}
+A seguir, apresentamos dois exemplos de programas em Pascal que ilustram suas características estruturadas e didáticas.
+
+\section{Exemplo 1: Cálculo da Média de Três Números}
+Este programa solicita três números ao usuário, calcula a média e exibe o resultado.
+
+\begin{verbatim}
+program CalculaMedia;
+var
+  num1, num2, num3, media: real;
+begin
+  writeln('Digite três números:');
+  readln(num1);
+  readln(num2);
+  readln(num3);
+  media := (num1 + num2 + num3) / 3;
+  writeln('A média é: ', media:0:2);
+end.
+\end{verbatim}
+
+\section{Exemplo 2: FizzBuzz}
+O clássico problema FizzBuzz imprime números de 1 a 20, substituindo múltiplos de 3 por "Fizz", múltiplos de 5 por "Buzz" e múltiplos de ambos por "FizzBuzz".
+
+\begin{verbatim}
+program FizzBuzz;
+var
+  i: integer;
+begin
+  for i := 1 to 20 do
+  begin
+    if (i mod 3 = 0) and (i mod 5 = 0) then
+      writeln('FizzBuzz')
+    else if i mod 3 = 0 then
+      writeln('Fizz')
+    else if i mod 5 = 0 then
+      writeln('Buzz')
+    else
+      writeln(i);
+  end;
+end.
+\end{verbatim}
+
+Esses exemplos demonstram a clareza da sintaxe do Pascal, com uso de estruturas de controle (\texttt{if}, \texttt{for}) e modularidade, um exemplo de maior complexidade seria por exemplo a criação de um CRUD, que se encontra disponivel como adicional ao fim desde relatorio.
+
+\chapter{Prática: Tutoriais de Instalação, Uso e Programação}
+\section{Instalação do Free Pascal}
+O Free Pascal é um compilador moderno e gratuito para a linguagem Pascal, disponível em diversas plataformas (Windows, Linux, macOS). Siga os passos abaixo para instalá-lo:
+
+\begin{enumerate}
+    \item \textbf{Baixe o Free Pascal:} Acesse o site oficial \texttt{https://www.freepascal.org} e faça o download da versão mais recente para seu sistema operacional.
+    \item \textbf{Instalação no Windows:}
+        \begin{itemize}
+            \item Execute o instalador (\texttt{.exe}) e siga as instruções.
+            \item O compilador será instalado por padrão em \texttt{C:\FPC}.
+        \end{itemize}
+    \item \textbf{Instalação no Linux:}
+        \begin{itemize}
+            \item Use o gerenciador de pacotes (ex.: \texttt{sudo apt install fpc} no Ubuntu).
+            \item Verifique a instalação com \texttt{fpc -version}.
+        \end{itemize}
+    \item \textbf{Ambiente de Desenvolvimento:} O Lazarus (\texttt{https://www.lazarus-ide.org}) é uma IDE recomendada que integra o Free Pascal e suporta desenvolvimento gráfico.
+    \item \textbf{Opção online:} Para familiarização com a linguagem e somente testes simples, pode-se utilizar um compilador online, para este estudo, foi utilizado o \\\texttt{https://www.onlinegdb.com/online\_pascal\_compiler}
+\end{enumerate}
+
+\section{Compilando e Executando um Programa}
+\begin{enumerate}
+    \item Crie um arquivo \texttt{programa.pas} com o código desejado (ex.: o programa FizzBuzz acima).
+    \item Abra o terminal, navegue até o diretório do arquivo e compile com: \texttt{fpc programa.pas}.
+    \item Execute o programa gerado: \texttt{./programa} (Linux/macOS) ou \texttt{programa.exe} (Windows).
+\end{enumerate}
+
+\section{Tutorial Prático: Criando um Programa Simples}
+Crie um programa que verifica se um número é par ou ímpar:
+\begin{enumerate}
+    \item Crie um arquivo \texttt{par\_impar.pas}.
+    \item Adicione o seguinte código:
+\begin{verbatim}
+program ParImpar;
+var
+  numero: integer;
+begin
+  writeln('Digite um número:');
+  readln(numero);
+  if numero mod 2 = 0 then
+    writeln('O número é par')
+  else
+    writeln('O número é ímpar');
+end.
+\end{verbatim}
+    \item Compile e execute conforme descrito acima.
+\end{enumerate}
+
+\chapter{Considerações Finais}
+O estudo da linguagem Pascal revelou sua importância histórica e pedagógica na ciência da computação. Projetada por Niklaus Wirth com foco no ensino, Pascal introduziu conceitos de programação estruturada e tipagem forte que moldaram gerações de programadores e influenciaram linguagens modernas como Modula-2, Oberon e Delphi. Sua sintaxe clara e organização lógica a tornam uma ferramenta valiosa para iniciantes, enquanto sua robustez permitiu aplicações práticas, especialmente com o Turbo Pascal.
+
+Embora tenha perdido espaço no mercado para linguagens mais versáteis como C++ e Python, o legado de Pascal permanece vivo em compiladores como o Free Pascal e em sua influência no ensino de programação, mesmo que limitando-se atualmente ao ambiente academico como sua primaria função.
+
+% Elementos pós-textuais
+\postextual
+
+% Criando a seção de bibliografia, Maicon atualizei aqui para ficar seguindo o padrão ABNT como deveria
+\begin{thebibliography}{9}
+\bibitem{evaristo2000}
+EVARISTO, Jaime. \textit{Programando com Pascal: a linguagem do Turbo Pascal e do Delphi}. 2. ed. revista. São Paulo: E-Book Express, 2000.
+\bibitem{jensen1974}
+JENSEN, Kathleen; WIRTH, Niklaus. \textit{Pascal user manual and report}. 4. ed. Revisão de Andrew B. Mickel; James F. Miner. Berlin: Springer-Verlag, 1974.
+\bibitem{freepascal2025}
+FREE PASCAL. Disponível em: \url{https://www.freepascal.org}. Acesso em: 10 set. 2025.
+\end{thebibliography}
+
+
+% Apêndice
+\appendix
+\chapter{Manifestação Individual}
+\subsection{Edgard de Paiva Melo Filho}
+Foi com consideravel surpresa que durante a pesquisa foi visto que as primeiras versões de programas relativamente recentes em comparação com a idade da linguagem de programação, foram feitos utilizando variações de Pascal, por exemplo o Skype, onde o cliente desktop inicial foi rapidamente prototipado usando Object Pascal no ambiente de desenvolvimento Delphi. Essa escolha foi impulsionada pela experiência do desenvolvedor principal de interface, que aproveitou as vantagens do Delphi para criar aplicativos Windows nativos eficientes, com uma experiência de usuário refinada que era essencial para a pequena equipe buscando entrar rapidamente no mercado.
+Além disso,a linguagem Pascal mostra uma abordagem bastante didática. A sua tipagem forte e a sintaxe clara facilitam a compreensão de conceitos fundamentais, como estruturas de controle e modularidade, que são essenciais para iniciantes. O uso de \texttt{begin} e \texttt{end} para delimitar blocos de código reforça a organização lógica, tornando assim bastante claro e intuitivo sua utilização.
+
+\subsection{Maicon Gomes Messias}
+Sinceramente, eu vejo o Pascal como uma linguagem que marcou época. Ela pode parecer "antiga" hoje em dia, mas teve um papel muito importante: ajudou muita gente a aprender lógica de programação de forma organizada. O legal do Pascal é que ele é bem estruturado, então não dá pra sair escrevendo código bagunçado; ele praticamente "obriga" a programar com disciplina.
+
+% Anexos
+\anexo
+\chapter{Exemplo 3: CRUD simples // Edgard Melo}
+
+\begin{verbatim}
+program CRUD_Estudantes;
+uses crt;
+
+const
+  MAX_ESTUDANTES = 100; { Limite do array }
+
+type
+  TEstudante = record
+    id: integer;
+    nome: string[50];
+    nota: integer;
+    ativo: boolean; { Flag para indicar se o registro está ativo }
+    {notem que a linguagem deixa muito bem definida os tipos das variaveis}
+  end;
+
+var
+  estudantes: array[1..MAX_ESTUDANTES] of TEstudante;
+  totalEstudantes: integer;
+
+{ Procedimento para inicializar o array }
+procedure Inicializar;
+var
+  i: integer;
+begin
+  totalEstudantes := 0;
+  for i := 1 to MAX_ESTUDANTES do
+    estudantes[i].ativo := false;
+end;
+
+{ Função para encontrar um slot livre }
+function EncontrarSlotLivre: integer;
+var
+  i: integer;
+begin
+  for i := 1 to MAX_ESTUDANTES do
+    if not estudantes[i].ativo then
+    begin
+      EncontrarSlotLivre := i;
+      exit;
+    end;
+  EncontrarSlotLivre := 0; { Retorna 0 se não houver slot livre }
+end;
+
+{ Procedimento para criar um novo estudante }
+procedure CriarEstudante;
+var
+  inputId, inputNota: integer;
+  inputNome: string[50];
+  slot: integer;
+begin
+  clrscr; {comando para limpar o console/janela atual}
+  writeln('=== Criar Estudante ===');
+  slot := EncontrarSlotLivre;
+  if slot = 0 then
+  begin
+    writeln('Erro: Banco cheio!');
+    readln;
+    exit;
+  end;
+  writeln('Digite o ID: ');
+  readln(inputId);
+  writeln('Digite o nome: ');
+  readln(inputNome);
+  writeln('Digite a nota: ');
+  readln(inputNota);
+  with estudantes[slot] do
+  begin
+    id := inputId;
+    nome := inputNome;
+    nota := inputNota;
+    ativo := true;
+  end;
+  totalEstudantes := totalEstudantes + 1;
+  writeln('Estudante criado com sucesso!');
+  readln;
+end;
+
+{ Procedimento para ler (listar) todos os estudantes }
+procedure ListarEstudantes;
+var
+  i: integer;
+begin
+  clrscr; {comando para limpar o console/janela atual}
+  writeln('=== Lista de Estudantes ===');
+  if totalEstudantes = 0 then
+  begin
+    writeln('Nenhum estudante cadastrado.');
+    readln;
+    exit;
+  end;
+  for i := 1 to MAX_ESTUDANTES do
+    if estudantes[i].ativo then
+      writeln('ID: ', estudantes[i].id, ' | Nome: ', estudantes[i].nome, ' | Nota: ', estudantes[i].nota);
+      {notem que não posso fazer uma 'quebra de linha nessa definição ou causa um erro, tentem separa-la caso queiram testar'}
+  readln;
+end;
+
+{ Função para buscar estudante por ID }
+function BuscarEstudante(id: integer): integer;
+var
+  i: integer;
+begin
+  for i := 1 to MAX_ESTUDANTES do
+    if (estudantes[i].ativo) and (estudantes[i].id = id) then
+    begin
+      BuscarEstudante := i;
+      exit;
+    end;
+  BuscarEstudante := 0; { Retorna 0 se não encontrado }
+end;
+
+{ Procedimento para atualizar um estudante }
+procedure AtualizarEstudante;
+var
+  inputId, inputNota: integer;
+  inputNome: string[50];
+  indice: integer;
+begin
+  clrscr; {comando para limpar o console/janela atual}
+  writeln('=== Atualizar Estudante ===');
+  writeln('Digite o ID do estudante: ');
+  readln(inputId);
+  indice := BuscarEstudante(inputId);
+  if indice = 0 then
+  begin
+    writeln('Estudante não encontrado!');
+    readln;
+    exit;
+  end;
+  writeln('Digite o novo nome: ');
+  readln(inputNome);
+  writeln('Digite a nova nota: ');
+  readln(inputNota);
+  with estudantes[indice] do
+  begin
+    nome := inputNome;
+    nota := inputNota;
+  end;
+  writeln('Estudante atualizado com sucesso!');
+  readln;
+end;
+
+{ Procedimento para deletar um estudante }
+procedure DeletarEstudante;
+var
+  id, indice: integer;
+begin
+  clrscr; {comando para limpar o console/janela atual}
+  writeln('=== Deletar Estudante ===');
+  writeln('Digite o ID do estudante: ');
+  readln(id);
+  indice := BuscarEstudante(id);
+  if indice = 0 then
+  begin
+    writeln('Estudante não encontrado!');
+    readln;
+    exit;
+  end;
+  estudantes[indice].ativo := false;
+  totalEstudantes := totalEstudantes - 1;
+  writeln('Estudante deletado com sucesso!');
+  readln;
+end;
+
+{ Procedimento para exibir o menu }
+procedure ExibirMenu;
+begin
+  clrscr; {comando para limpar o console/janela atual}
+  writeln('=== Sistema CRUD de Estudantes ===');
+  writeln('1. Criar estudante');
+  writeln('2. Listar estudantes');
+  writeln('3. Atualizar estudante');
+  writeln('4. Deletar estudante');
+  writeln('5. Sair');
+  writeln('Escolha uma opção: ');
+end;
+
+{ Programa principal }
+{Como o professor explicou durante a apresentação, o programa em si, se resume a esta linha para baixo}
+{sendo tudo acima,modulos/blocos para o funcionamento do programa, e como dito a modularização poderia ser ainda maior}
+var
+  opcao: integer;
+begin
+  Inicializar;
+  repeat
+    ExibirMenu;
+    readln(opcao);
+    case opcao of
+      1: CriarEstudante;
+      2: ListarEstudantes;
+      3: AtualizarEstudante;
+      4: DeletarEstudante;
+      5: writeln('Saindo...');
+      else
+      begin
+        writeln('Opção inválida! Pressione Enter para continuar.');
+        readln;
+      end;
+    end;
+  until opcao = 5;
+end.
+\end{verbatim}
+\anexo
+\chapter{Exemplo 4: Sistema de notas de alunos//Maicon Gomes Messias}
+\begin{verbatim}
+program NotasAlunos;
+    uses crt;
+    var
+      nome: string;
+      nota1, nota2, nota3, media: real;
+    
+    begin
+      clrscr;
+      
+      writeln('Digite o nome do aluno:');
+      readln(nome);
+      
+      writeln('Digite a primeira nota:');
+      readln(nota1);
+      
+      writeln('Digite a segunda nota:');
+      readln(nota2);
+      
+      writeln('Digite a terceira nota:');
+      readln(nota3);
+      
+      media := (nota1 + nota2 + nota3) / 3;
+      
+      writeln('Aluno: ', nome);
+      writeln('Media: ', media:0:2);
+      
+      if media >= 7 then
+        writeln('Situacao: Aprovado')
+      else if media >= 5 then
+        writeln('Situacao: Recuperacao')
+      else
+        writeln('Situacao: Reprovado');
+      
+      readln;
+end.
+\end{verbatim}
+
+\end{document}
