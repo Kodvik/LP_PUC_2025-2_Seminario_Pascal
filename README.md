@@ -2,6 +2,24 @@
 
 Material foi que utilizado para apresentação pode ser encontrado neste repositorio, juntamente com os livros que foram utilizados para melhor compreenção da linguagem quando fazendo os exemplos.
 
+## Estrutura do Repositório para Navegação
+
+- **Arquivos LaTeX**
+  - [Apresentação_Slides.tex](Arquivos%20LaTeX/Apresentacao_Slides.tex)
+  - [Trabalho_escrito.tex](Arquivos%20LaTeX/Trabalho_escrito.tex)
+
+- **Exemplos**
+  - [CRUD.pas](Exemplos/CRUD.pas)
+  - [Calcula_Media.pas](Exemplos/Calcula_Media.pas)
+
+- **Livros de Referência**
+  - [Pascal_User_Manual_and_Report.pdf](Livros%20de%20Referencia/Pascal_User_Manual_and_Report.pdf)
+  - [Programando_com_Pascal.pdf](Livros%20de%20Referencia/Programando_com_Pascal.pdf)
+
+- **PDFs Resultantes**
+  - [Apresentação_Slides.pdf](PDFs%20Resultantes/Apresentacao_Slides.pdf)
+  - [Trabalho_escrito.pdf](PDFs%20Resultantes/Trabalho_escrito.pdf)
+
 ## Importante
 lembre-se que caso não queira instalar, pode-se utilizar simplesmente uma plataforma online como [Online GDB Pascal Compiler](https://www.onlinegdb.com/online_pascal_compiler)
 
