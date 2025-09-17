@@ -1,0 +1,59 @@
+# Pascal compiled files
+*.exe
+*.o
+*.obj
+*.ppu
+*.compiled
+*.lps
+
+# Free Pascal Compiler files
+*.fpc
+*.pas~
+*.pp~
+*.inc~
+*.lfm~
+
+# Lazarus IDE files
+*.lpi
+*.lpr
+*.lps
+*.lrt
+*.res
+backup/
+lib/
+
+# Debug files
+*.dbg
+*.gdb
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Project-specific backups
+projeto_backup/
+backup_*/
+
+# IDE specific files
+*.dsk
+*.dof
+*.cfg
+*.local
+
+# Unit output directories
+units/
+output/
+
+# Documentation generated files
+docs/html/
+docs/latex/
+
+# Test output
+test_results/
+*.test
