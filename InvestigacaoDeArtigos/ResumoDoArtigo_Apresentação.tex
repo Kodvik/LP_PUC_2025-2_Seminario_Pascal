@@ -1,0 +1,141 @@
+\documentclass{beamer}
+\usetheme{Berlin} % Warsaw como modelo não estava funcionando bem, apesar de ficar MUITO BOM, Berlin ficou mais claro
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{hyperref} % Hyperlinks estavam dando problema antes
+% Para definir o estilo de codigo para os exemplos de pascal
+
+\lstset{
+    language=Pascal,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single
+}
+
+% Informação da pagina de titulo, tive que mudar a escala para 0.45 no logo, estava dando errado com 0.6
+\title{Linguagem de Programação: Grupo 1 - Pascal}
+\subtitle{\textit{"A Transformation of the Way of Thinking:\\Key Principles in Programming Education Inspired by Pascal."}\\\footnotesize{Publicado em: 10 de Dezembro de 2024}}
+\author{Edgard de Paiva Melo Filho, Maicon Gomes Mesias}
+\institute{\includegraphics[scale=0.45]{LOGO_PUC.png}\\Pontifícia Universidade Católica de Minas Gerais \\ Instituto de Ciências Exatas e Informática \\ Curso de Engenharia de Computação}
+\date{09 de Outubro de 2025}
+\begin{document}
+% Capa (Title Slide)
+\frame{\titlepage}
+% Sumário / Roteiro / Agenda
+\begin{frame}{Sumário / Roteiro / Agenda}
+\tableofcontents
+\end{frame}
+
+\begin{frame}{Ressalva sobre fonte das imagens}
+ \begin{itemize}
+     \item \footnotesize{A primeira imagem que retrata Niklaus Wirth é a única que foi obtida externamente ao artigo, tendo como fonte o artigo do New York Times sobre o falecimento de Wirth em 1 de janeiro de 2024.} \footnotesize{\textit{https://www.nytimes.com/2024/02/22/technology/niklaus-wirth-dead.html}}
+     \item Todas as outras imagens, tabelas e graficos foram extraidos do próprio artigo.
+ \end{itemize}
+\end{frame}
+
+\section{Contexto Historico}
+\begin{frame}{Contexto Historico - Estudo de Caso}
+\begin{itemize}
+\item O artigo faz uma análise de como o ensino de pensamento algorítmico e lógica de programação foi disseminado como cultura na Lituânia, utilizando o Pascal como meio.
+\item em 1977 Laimutis Telksnys já trazia uma ideia de que a programação e pensamento criativo, algoritmico e estruturado seria importante para o futuro das gerações seguintes na Lituânia.
+\item A escolha de Pascal ocorreu após debates entre linguagens como PL/1 e Algol, destacando-se sua estrutura clara e foco em boas práticas de programação estruturada, conforme idealizado por Niklaus Wirth.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Contexto Historico - Contato direto com Wirth}
+    \centering
+    \includegraphics[scale=0.10]{Niklaus-WirthOLD.jpg}
+\end{frame}
+
+\begin{frame}{Contexto Historico - Contato direto com Wirth}
+    \centering
+    \includegraphics[scale=0.25]{carta.png}
+\end{frame}
+
+\begin{frame}{Contexto Historico - Contato direto com Wirth}
+    \centering
+    \includegraphics[scale=0.3]{carta_Zoom.png}
+\end{frame}
+
+\begin{frame}{Contexto Historico - Literatura em Lituano}
+    \centering
+    \includegraphics[scale=0.3]{LivrosLituania.png}
+\end{frame}
+
+\begin{frame}{Contexto Historico - Literatura em Lituano}
+    \centering
+    \includegraphics[scale=0.24]{jornaisDidaticosLituano.jpg}
+\end{frame}
+
+\begin{frame}{Contexto Historico - Estrategia de disseminação}
+    \centering
+    \includegraphics[scale=0.3]{estrategiaDeEnsinoJornal.jpg}
+\end{frame}
+
+\begin{frame}{Contexto Historico - Estrategia de disseminação}
+    \centering
+    \includegraphics[scale=0.25]{fragmentoSextaLicao.jpg}
+\end{frame}
+
+\begin{frame}{Contexto Historico - Comparativo em Competições de Programação}
+    \centering
+    \includegraphics[scale=0.60]{TabelaDeResultados.jpg}
+\end{frame}
+
+\section{Metodologia}
+\begin{frame}{Metodologia}
+    \begin{enumerate}
+    \item \textbf{Pioneiros} (4 especialistas), ou seja, professores que começaram nos primeiros anos da introdução da informática nas escolas e que contribuíram para as primeiras iniciativas de ensino de programação.
+    \item \textbf{Professores da JPM} (4 especialistas), que lecionaram na escola JPM.
+    \item \textbf{Professores da geração mais jovem} (3 especialistas), que trabalharam com Pascal em escolas de ensino médio.
+\end{enumerate}
+\end{frame}
+
+\section{Analise de Dados}
+\begin{frame}{Dados Obtidos}
+    \centering
+    \includegraphics[scale=0.38]{dadosObtidos1.jpg}
+\end{frame}
+
+\begin{frame}{Dados Obtidos}
+    \centering
+    \includegraphics[scale=0.38]{dadosObtidos2.jpg}
+\end{frame}
+
+\section{Conclusão}
+\begin{frame}{Conclusão}
+    \centering
+    \includegraphics[scale=0.28]{Niklaus&Valentine.jpg}
+\end{frame}
+
+\begin{frame}{Conclusão}
+    \centering
+    \includegraphics[scale=0.3]{LivroEnsinoMedioLituania.jpg}
+\end{frame}
+
+\section{Referencias}
+\begin{frame}{Referencias}
+\begin{itemize}
+\item DAGIENĖ, V.; GRIGAS, G.; JEVSIKOVA, T. A Transformation of the Way of Thinking: Key Principles in Programming Education Inspired by Pascal. \textit{Informatics in Education}, v.~23, n.~4, p.~735--765, 2024. DOI: \url{https://doi.org/10.15388/infedu.2024.25}.
+\item XINOGALOS, S.; PITNER, T.; IVANOVIĆ, M.; SAVIĆ, M. Students’ perspective on the first programming language: C-like or Pascal-like languages? \textit{Educ Inf Technol}, v.~23, p.~287--302, 2018. DOI: \url{https://link.springer.com/article/10.1007/s10639-017-9601-6}.
+\end{itemize}
+\end{frame}
+\section{Apêndice}
+\begin{frame}{Apêndice: Destaques Individuais}
+\textbf{Edgard de Paiva Melo Filho:} A leitura do texto demonstra de forma clara o impacto que a escolha da linguagem Pascal teve não somente na metodologia de ensino de programação na Lituânia, mas também no desenvolvimento tecnológico e na cultura organizacional voltada aos estudos no país, onde se observou uma enorme ênfase no pensamento criativo em torno da linguagem, com exercícios de compreensão por leitura e análise de casos realizados de forma constante como parte da grade curricular, incluindo ainda o ensino de programação em Pascal no ciclo básico da educação em informática, com foco na popularização do conhecimento técnico.
+\end{frame}
+\begin{frame}
+\textbf{Maicon Gomes Mesias:} O que mais me chamou atenção no artigo foi perceber que o ensino de programação com Pascal não era só sobre aprender código, mas sobre aprender a pensar.
+Mesmo sem computadores, os professores da Lituânia criaram métodos criativos, como a Escola de Jovens Programadores por Correspondência, que ensinava lógica e algoritmos por cartas e jornais.
+Esse projeto formou gerações de alunos premiados e mostrou que programar é desenvolver o raciocínio lógico e a criatividade.
+A foto de Niklaus Wirth com Valentina Dagienė simboliza bem isso: o encontro entre o criador do Pascal e quem transformou sua ideia em uma verdadeira revolução educacional
+\end{frame}
+
+\end{document}
