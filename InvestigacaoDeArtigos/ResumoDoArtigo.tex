@@ -1,0 +1,135 @@
+\documentclass[12pt,a4paper,oneside]{abntex2}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[alf,abnt-etal-cite=3,abnt-etal-list=0]{abntex2cite}  % Para citações e referências ABNT, lembra de não tirar
+\usepackage{geometry}  % Adicionado para margens consistentes, já que estava bugando
+\geometry{margin=2.5cm}  % Margens ajustadas, seguindo o padrão da abnt
+
+\ABNTEXfontereduzida{\footnotesize}  % Tamanho para notas de rodapé, legendas, etc...
+\ABNTEXfontelista{\small}  % Tamanho para listas...
+\bibliographystyle{abnt} %adicionado após apresentarmos para testar formatação de referencia
+
+\titulo{Relatório de Pesquisa de Artigos LP Pascal\small{\\\textit{"A Transformation of the Way of Thinking:\\Key Principles in Programming Education Inspired by Pascal."}}\\\footnotesize{Publicado em: 10 de Dezembro de 2024}}
+\autor{Edgard de Paiva Melo Filho\\Maicon Gomes Messias}
+\local{Belo Horizonte}
+\data{Out, 2025}
+\instituicao{%
+  \includegraphics[]{LOGO_PUC.png}
+  \\
+  Pontifícia Universidade Católica de Minas Gerais
+  \par
+  Instituto de Ciências Exatas e Informática
+  \par
+  Curso de Engenharia de Computação
+  \par
+  Professor Orientador: Marco Rodrigo Costa 
+}
+\tipotrabalho{Trabalho Acadêmico}
+
+\preambulo{Trabalho apresentado à disciplina de Linguagens de Programação do Curso de Engenharia de Computação da Pontifícia Universidade Católica de Minas Gerais, como requisito parcial para avaliação.}
+
+% Configurações de sumário (ABNT NBR 6027)
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\large}
+\renewcommand{\ABNTEXsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+
+\begin{document}
+
+% Elementos pré-textuais
+\imprimircapa  % Capa conforme ABNT
+
+\imprimirfolhaderosto  % Adicionada para conformidade, já que está no padrão da ABNT (mas ficou melhor que a capa mesmo na minha opnião Maicon, acho que a gente mantem)
+
+% Sumário
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\newpage  % Força quebra limpa após sumário
+
+% Elementos textuais
+\textual
+\chapter{Resumo do Artigo}
+Após processo de seleção do artigo, foi escolhido um estudo feito durante um longo espaço de tempo, onde é feita uma retrospectiva da influência do Pascal no ensino de programação especificamente na Lituânia, é destacado o quanto a utilização da linguagem promovou uma transformação no pensamento algoritmico entre alunos e professores. Os autores, a partir dos dados obtidos nos relatorios que se dão desde a era soviética, abordam principios chave que surgiram no meio acadêmico, suportados pela pesquisa qualitativa com entrevistas de onze especialistas (entre pioneiros, professores da escola de jovens programadores por correspondência e educadores de gerações mais recentes).
+
+O artigo inicia dando o contexto historico, onde no final dos anos 70, a Lituânia que se encontrava sob ocuipação soviética, enfrentava muitas limitações tecnológicas, com máquinas ES EVM compatíveis com IBM, porém, sem compiladores nativos para Pascal. Após debates entre outras linguagens como PL/1 e Algol, o Pascal foi adotado por ter como ênfase a programação bastante estruturada, clareza e legibilidade, sendo assim uma ótima porta de entrada para iniciantes em programação. Uma conversa direta via carta com Wirth resultou na utilização de Pascal-S (que é um subconjunto educacional), o qual foi expandido localmente para incluir tipos de dados como enumerações e conjuntos, dando assim aos alunos uma maior facilidade no tratamento de dados. Em 1981, a \textbf{JPM} \textit{Jaunu˛ju˛ programuotoju˛ mokykla} (Escola para Jovens Programadores) foi criada e atraiu milhares de alunos, oferecendo aulas publicas em jornais e via correio, tendo foco não somente em ensinar a obter códigos executáveis, mas em um estilo de programação onde a legibilidade e criatividade fossem destaque. A JPM com isso teve enorme influencia na elite dos programadores lituanos oferecendo uma base para inovações como compiladores personalizados com mensagens detalhadas de erro, correções automatizadas e dicas para iniciantes, além disso oferecendo adaptações para máquinas mais limitadas como a BK-0010.
+
+No desenvolvimento do artigo, os autores destacaram muitas inovações que estruturaram como o ensino programação é vista até a data do artigo (2024) na Lituânia, onde como alguns exemplos a avaliação da legibilidade dos programas (em paralelo com os resultados computacionais), tarefas de "leitura" de código para compreenção, uma grande ênfase em pensamento criativo para a solução de problemas (não apenas a linguagem como um fim), abordagens inicialmente sem computadores (onde o conceito é sempre feito no papel inicialmente para fomentar abstração), e mensagens de compiladores amigaveis (com informações claras de onde estavam os erros) são até a atualidade valores utilizados no ensino de programação. A JPM evoluiu ainda na década de 80, incorporando elementos de gamificação e competições colaborativas, precursoras de inciativas globais como o Bebras Challenge, já em 1986, aulas de informática (incluindo programação em pascal) tornou-se obrigatória em todas as escolas lituanas, impulsionada pela JPM.
+
+A pesquisa qualitativa alguns fatores de sucesso, como a constante motivação dos alunos através de tarefas criativas e com contexto de uso tangivel além de acampamentos de verão com foco em programação; intenso treinamento dos professores; disponibilidade de compiladores locais e materiais didáticos em lituano; e a escolha de pascal por seu rigor sintático, segurança de tipos e facilidade de transição par aoutras linguagens, uma vez que a lógica é clara devido a estrutura da linguagem. Entrevistados enfatizaram o Pascal como superior para educação incial quando comparado ao BASIC ou C++, uma vez que a linguagem promove uma cultura de programação onde o estilo limpo, bem estruturado e com modularidade. Algumas correlações temáticas feitas mostram links entre avanços tecnológicos, iniciativas nacionais e de metodologias, com o Pascal como catalisador.
+
+Por fim, embora algumas práticas tenham se tornado obsoletas com os avanços técnologicos, muitas permanecem relevantes, como o foco em algoritmos sobre sintaxe, tarefas de leitura e compreenção de código para analise, e promoção de criatividade. Os autores concluiram assim que Pascal não era apenas uma ferramenta durante o periodo de inicial capacitação de alunos e professores na Lituânia, mas um meio para desenvolver a inteligência, disciplina e pensamento criativo, influcienciando a educação lituana por muitas décadas e inspirando reflexões globais sobre curriculos de ensino de programação em escolas. Como ponto de fechamento, o artigo inclui apêndices com exemplos de tarefas e listas de livros lituanos baseados em Pascal, que datam desde 1980 até 2002, reforçando assim seu legado educacional na região.
+
+\chapter{Destaques Individuais}
+
+\section{Edgard Melo}
+
+A leitura do texto demonstra de forma clara o impacto que a escolha da linguagem Pascal teve não somente na metodologia de ensino de programação na Lituânia, mas também no desenvolvimento tecnológico e na cultura organizacional voltada aos estudos no país, onde se observou uma enorme ênfase no pensamento criativo em torno da linguagem, com exercícios de compreensão por leitura e análise de casos realizados de forma constante como parte da grade curricular, incluindo ainda o ensino de programação em Pascal no ciclo básico da educação em informática, com foco na popularização do conhecimento técnico.
+
+Mas é importante destacar que segundo o que foi analisado no artigo adicional que o grupo utilizou, o impacto da linguagem de programação utilizada é limitado, cria-se sim tendencias culturais na forma de se pensar e solucionar problemas, mas se faz extremamente importante ainda a devida atenção a metodologia de ensino.
+
+\section{Maicon Gomes}
+O que mais me chamou atenção no artigo foi perceber que o ensino de programação com Pascal não era só sobre aprender código, mas sobre aprender a pensar.
+Mesmo sem computadores, os professores da Lituânia criaram métodos criativos, como a Escola de Jovens Programadores por Correspondência, que ensinava lógica e algoritmos por cartas e jornais.
+Esse projeto formou gerações de alunos premiados e mostrou que programar é desenvolver o raciocínio lógico e a criatividade.
+A foto de Niklaus Wirth com Valentina Dagienė simboliza bem isso: o encontro entre o criador do Pascal e quem transformou sua ideia em uma verdadeira revolução educacional
+
+% Elementos pós-textuais
+\postextual
+
+% Criando a seção de bibliografia, Maicon atualizei aqui para ficar seguindo o padrão ABNT como deveria
+\begin{thebibliography}{9}
+\bibitem{dagiene2024}
+DAGIENĖ, V.; GRIGAS, G.; JEVSIKOVA, T. A Transformation of the Way of Thinking: Key Principles in Programming Education Inspired by Pascal. \textit{Informatics in Education}, v.~23, n.~4, p.~735--765, 2024. DOI: \url{https://doi.org/10.15388/infedu.2024.25}.
+
+\bibitem{xinogalos2018}
+XINOGALOS, S.; PITNER, T.; IVANOVIĆ, M.; SAVIĆ, M. Students’ perspective on the first programming language: C-like or Pascal-like languages? \textit{Educ Inf Technol}, v.~23, p.~287--302, 2018. DOI: \url{https://link.springer.com/article/10.1007/s10639-017-9601-6}.
+
+\end{thebibliography}
+
+% Apêndice
+\appendix
+\chapter{Apendices}
+\section{Sintese Individual do Artigo}
+\subsection{Edgard Melo}
+O estudo se mostra extremamente completo, apresentando uma analise histórica sobre como a linguagem Pascal mudou a forma de ensinar na Lituânia, mudando por muitas décadas o pensamento lógico de alunos e publico amplo, já que uma das formas de disseminação da informação utilizadas foi publicações em jornais de noticias ensinando conceitos básicos de programação em Pascal com a criação da JPM (escola para jovens programadores) por correspondência, a qual levou a criação de diversos compiladores adaptados para máquinas soviéticas limitadas, mensagens de erros claras e até mesmo correção automatica com dicas para novatos.
+
+No artigo os autores destacam que muitas das inovações pensadas na época ainda valem hoje, como a valorização da legibilidade do código, ensinar estilo de programação juntamente com tendencias de mercado, foco extremo na criatividade e resolução de problemas e não somente em saber digitar comandos. No final, os autores dizem que o legado do Pascal ainda continua relevante para o ensino de programação, mesmo com os desafios atuais gerados pela constante e rápida movimentação do mercado e tendencias.
+
+\subsection{Maicon Gomes}
+O artigo fala sobre como a linguagem Pascal, criada por Niklaus Wirth, mudou completamente o jeito de ensinar programação e até a forma de pensar dos alunos.
+Na Lituânia, durante os anos 1980, um grupo de professores e pesquisadores começou a ensinar programação de um jeito muito diferente: em vez de focar só no computador, eles queriam que os estudantes aprendessem a pensar como programadores, com lógica, criatividade e organização.
+
+Eles criaram a Escola de Jovens Programadores por Correspondência (JPM), em 1981, onde os alunos aprendiam por cartas e jornais, já que poucos tinham acesso a computadores.
+Com o tempo, o projeto cresceu, teve competições, olimpíadas e até transmissões na TV, ajudando milhares de jovens a entender o raciocínio por trás dos algoritmos.
+Essa escola formou muitos talentos — alguns acabaram virando professores e cientistas, e outros conquistaram medalhas em olimpíadas internacionais de informática, mostrando o impacto real do método.
+
+O artigo também destaca que o Pascal foi essencial nesse processo. Por ser uma linguagem simples, organizada e muito clara, ela ajudava os alunos a escrever programas bonitos, legíveis e com sentido.
+Os professores chegaram a criar compiladores próprios, que mostravam os erros com explicações e até corrigiam automaticamente — uma baita inovação pra época.
+
+Mais do que ensinar a programar, a ideia era ensinar a pensar, resolver problemas e criar soluções criativas.
+Muitas dessas práticas — como ler e analisar código, criar jogos e desafios e usar o computador como ferramenta de aprendizado — continuam sendo base do ensino moderno de programação até hoje.
+
+No final do artigo, há uma foto simbólica (Figura 12) mostrando Niklaus Wirth ao lado de Valentina Dagienė, uma das autoras do texto, tirada em Zurique em 2007.
+Essa imagem representa o encontro entre gerações: Wirth, o criador do Pascal e ganhador do Prêmio Turing, e Dagienė, que aplicou suas ideias para transformar a educação na Lituânia.
+Ela simboliza como a visão de Wirth ultrapassou fronteiras e inspirou uma revolução educacional.
+
+Em resumo, o artigo mostra que o ensino de programação inspirado em Pascal foi muito mais do que aprender uma linguagem — foi uma transformação no modo de pensar, ensinar e aprender.
+Os prêmios conquistados pelos alunos, o sucesso das olimpíadas e o reconhecimento internacional são provas de que o impacto do Pascal foi tanto técnico quanto humano: ele formou pessoas com pensamento lógico, disciplina, criatividade e amor pela resolução de problemas.
+\chapter{Resumo de artigo adicional (Perspectiva dos alunos)}
+
+Dado que o artigo principal escolhido apresenta uma perspectiva dos docentes, o grupo ficou curioso sobre a perspectiva de alunos ensinados em Pascal em comparação com linguagens C-Like, assim sendo, a seguir tem-se um breve resumo de um artigo encontrado por Xinogalos, Pitner, Ivanovic e Savic, "\textit{Student's perspective on the first programing language: C-like or Pascal-like languages?}".
+
+O artigo examina como os estudantes veem a adequação de linguagens semelhantes a C (como C, Java, Python) versus linguagens semelhantes a Pascal (como Pascal, Modula-2) como uma primeira linguagem de programação (PLP). O estudo baseia-se num inquérito dado a 288 estudantes de três universidades: Universidade da Macedónia (Grécia), Universidade Masaryk (República Checa) e Universidade de Novi Sad (Sérvia). Os investigadores dividiram os estudantes em dois grupos: um introduzido à programação com linguagens semelhantes a C (172 estudantes) e outro com linguagens semelhantes a Pascal (116 estudantes). Todos os participantes tinham experiência com mais de uma linguagem. Inicialmente é feita uma analise do estado atual da seleção da PLP ao longo das décadas. Foi apotando pelos autores como mudanças históricas (por exemplo, de Pascal para Smalltalk, Modula-2 para C++, ou para Java e Python) impulsionadas por paradigmas (imperativo, orientado a objetos), preocupações de ensino, necessidades da indústria e popularidade. O artigo menciona muitos estudos com resultados mistos: alguns mostram benefícios em linguagens educacionais como Ada ou Pascal para iniciantes, enquanto outros não encontram grandes diferenças no desempenho ao mudar para linguagens da indústria como Java. A grande maioria dos estudos enfatizam que o paradigma e o design do curso importam mais do que a própria linguagem.
+
+O estudo analisa cursos introdutórios de programação imperativa, descrevendo os currículos de diferentes instituições, demonstrado no artigo que a Macedónia enfatiza ideias como tipos primitivos, estruturas de controlo, funções e ficheiros em C/Java; a Masaryk muda de Pascal para C e depois para Python, adotando uma abordagem bottom-up ou top-down; a Novi Sad usa Modula-2 (agora a transitar para Java) para ensinar abstração e recursão. Os fatores que influenciam a escolha da PLP incluem métodos de ensino, ferramentas disponíveis, feedback da indústria e perspetivas de emprego, com foco em habilidades algorítmicas em vez de sintaxe específica.
+
+Um questionario composto de 27 itens divididos em duas partes (avaliação do curso e desafios de programação), usando uma escala Likert de 5 pontos foi utilizado para a coleta de dados. Estatísticas descritivas (mediana, IQR) mostram que os estudantes avaliaram bem seus cursos, onde foi apresentado, "conteúdo adequado" (mediana 4), "dificuldade média" (mediana 3), "bom equilíbrio entre teoria e prática" (mediana 4), "alta organização e qualidade" (mediana 3-4). E foi relatado no estudo que os estudantes dedicam 2 a 4 horas extras por semana (menos na Masaryk), e a maioria não mudaria nada no curso (variando entre 71 e 74%).
+
+Como conclusão, os autores dizem que a escolha da primeira linguagem de programação (FPL) não impacta profundamente as dificuldades iniciais em programação, desde que o curso seja de alta qualidade (conteúdo, organização, instrutores). A ênfase deve ser em pensamento algorítmico, resolução de problemas e hábitos de programação, não na linguagem específica, e que algumas limitações notadas são foco em instituições específicas e necessidade de estudos longitudinais. O artigo sugere reavaliar a primeira linguagem de programação utilizada no curso periodicamente, mas priorizar pedagogia sobre tendência.
+
+\end{document}
