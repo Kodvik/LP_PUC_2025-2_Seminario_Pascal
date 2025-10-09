@@ -2,6 +2,17 @@
 
 Material foi que utilizado para apresentação pode ser encontrado neste repositorio, juntamente com os livros que foram utilizados para melhor compreenção da linguagem quando fazendo os exemplos.
 
+## Estudo de Artigos Cientificos
+
+- **Arquivos LaTeX**
+  - [Apresentação_Slides.tex](InvestigacaoDeArtigos/ResumoDoArtigo_Apresentação.tex)
+  - [Trabalho_escrito.tex](InvestigacaoDeArtigos/ResumoDoArtigo.tex)
+
+- **PDFs**
+  - [RelatorioEscrito.pdf](InvestigacaoDeArtigos/RelatorioEscrito.pdf)
+  - [Apresentaçao_Artigo.pdf](InvestigacaoDeArtigos/Apresentaçao_Artigo.pdf)
+
+
 ## Estrutura do Repositório para Navegação
 
 - **Arquivos LaTeX**
@@ -46,4 +57,3 @@ sudo apt install fpc
 ```bash
 brew install fpc
 ```
-
